@@ -1,0 +1,27 @@
+[global]
+font = jetbrains mono nerd font
+allow_markup = yes
+origin = top-right
+corner_radius = 8
+offset = 8x8
+width = (200, 480)
+frame_width = 1
+frame_color = "#5394c4"
+separator_color= frame
+separator_height = 2
+alignment = center
+notification_limit = 6
+indicate_hidden = yes
+
+[urgency_low]
+background = "#0d0f12"
+foreground = "#CDD6F4"
+
+[urgency_normal]
+background = "#0d0f12"
+foreground = "#CDD6F4"
+
+[urgency_critical]
+background = "#0d0f12"
+foreground = "#CDD6F4"
+frame_color = "#FAB387"

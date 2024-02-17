@@ -1,0 +1,213 @@
+un foot
+nvim .config/hypr/keybinds.conf
+killall kitty
+chromium --enable-features=UseOzonePlatform --ozone-platform=wayland
+sudo shutdown +7
+code hyprdot/
+sudo nvim /etc/issue
+cp /etc/issue hyprdot/.config/
+sudo nvim /etc/issue
+ls /etc/
+ls /etc/ | grep iss
+code .config/hypr/
+pkill wlsunset
+clear
+neofetch
+un mako
+un dunst
+clear
+un grim slurp
+un hyprland
+un waybar
+un wofi
+un swaylock-git-effects
+pmq
+un swaylock-effects-git
+clear
+pmq
+un wofi
+un android-tools
+clear
+in noto-fonts
+un xdg-desktop-portal-hyprland
+un xdg-user-dirs
+un python-pillow
+in librewolf-bin
+paru -S librewolf-bin
+un firefox
+paru -S librewolf-bin
+paru -S --noconfirm librewolf-bin
+foot
+in foot
+un kitty
+un foot
+clear
+git clone https://github.com/Kamimusuhi/SlickFox
+git status
+nvim .config/hypr/hyprland.conf
+nvim .config/hypr/keybinds.conf
+nvim test
+chmod +x test
+./test
+in gum
+./test
+nvim test
+./test
+nvim test
+code test
+./test
+clear
+./test
+git clone https://github.com/AmirDahan/dotfiles
+clear
+in gtklock
+in swaylock
+clear
+in nwg-menu
+rm hello
+rm hello/
+cat .config/hypr/keybinds.conf
+in vencord
+paru -S vencord-bin
+paru -S vesktop-bin
+pmq 
+un vesktop-bin
+nvim .config/hypr/windowrule.conf
+neofetch
+ls
+code /etc/issue
+bl
+nvim test
+./test
+nvim test
+./test
+nvim test
+./test
+nvim test
+./test
+nvim test
+./test
+clear
+./test
+nvim test
+./test
+code .bashrc
+paru -S fig
+prun
+./test
+nvim test
+./test
+nvim test
+./test
+sudo pacman -S apt
+in swaync
+paru -S swaync
+brightnessctl set 1%
+in signal
+in nicotine+
+hst
+in steam
+sudo systemctl stop xwayland
+in hyprland-nvidia
+in libcrypto
+pacman -Qs libcry
+in libcrypto.so
+in libnvidia-pkcs11.so
+sudo ./dnscon
+sudo steam
+git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1 && nvim
+git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1 and  nvim
+clear
+git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1 and  nvim
+in npm
+clear
+cd Templates/Web/
+clear
+chromium index.html
+sudo nvim /etc/host
+sudo nvim /etc/hosts
+killall chromium
+ping youtube.com
+ping instagram.com
+nvim .librewolf/ccrwv6yj.default-default/chrome/css/websites/invidious.css
+nvim .librewolf/ccrwv6yj.default-default/chrome/css/websites/ddg.css
+git clone https://github.com/luyu-wu/Config
+code .
+neofetch
+sudo paacman -S luarocks
+in luarocks
+luarocks --local install magick
+luarocks install magick
+clear
+rm -rf .config/nvim/
+rm -rf .local/share/nvim/
+neofetch
+nvim .config/nvim/
+cd .config/nvim/
+.config/nvim/
+cler
+clear
+nvim ,
+.config/nvim/
+nvim .
+in ripgrep
+in ripgrep fd
+neofetch
+q
+code /usr/share/themes/
+sudo code /usr/share/themes/
+sudo code /usr/share/themes/ --no-sandbox
+sudo nvim /usr/share/themes/
+sudo nvim /usr/share/themes/clear
+clear
+ls
+nvim replace.sh
+chmod +x replace.sh
+sudo ./replace.sh
+nvim .config/kitty/
+neofetch
+git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1 and  nvim
+neofetch
+clear
+neofetch
+in cmatrix]
+in cmatrix
+cmatrix
+sudo rm -rf .config/nvim/
+sudo rm -rf .local/share/nvim/
+clear
+sudo nvim /etc/hosts
+clear
+rm `Videos/The Complete 2024 Web Development Bootcamp/`*/*.srt
+cd `Videos/The Complete 2024 Web Development Bootcamp/`
+clear
+ls
+clear
+kls
+ls
+rm */*.srt
+ls `02 - Introduction to HTML/`
+rm */*.url
+cd `Videos/The Complete 2024 Web Development Bootcamp/`
+clear
+`02 - Introduction to HTML/`
+cd `Videos/The Complete 2024 Web Development Bootcamp/`
+`02 - Introduction to HTML/`
+Templates/Web/
+clear
+ls
+Day-1/
+clear
+ls
+chromium html01.html
+ll
+clear
+nvim .config/waybar/style.css
+Chromium Templates/Web/Day-1/html01.html
+mpv .
+up
+neofetch
+un steam
+neofetch
+in ttyper
+chsh -s /bin/bash

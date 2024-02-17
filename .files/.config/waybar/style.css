@@ -1,0 +1,156 @@
+* {
+    font-size: 16px;
+    font-family: "JetBrainsMono Nerd Font", monospace;
+  }
+  
+  window#waybar {
+    background: rgba(15, 15, 18, 0.2);
+    color: #cdd6f4;
+    border-radius: 10px;
+  }
+
+#workspaces button {
+  color: #2f354a;
+  box-shadow: inset 0 -3px transparent;
+  padding: 0 3px;
+  margin-left: 0.1em;
+  margin-right: 0em;
+  transition: all 0.5s cubic-bezier(0.55, -0.68, 0.48, 1.68);
+}
+
+#workspaces button.active {
+  color: #bdc6f4;
+  padding-left: 1px;
+  padding-right: 12px;
+  margin-left: 0em;
+  margin-right: 0em;
+  transition: all 0.5s cubic-bezier(0.55, -0.68, 0.48, 1.68);
+}
+
+#workspaces button:hover {
+  color: #7a95c9;
+  transition: all 0.3s ease-in-out;
+}
+  
+  #battery,
+  #cpu,
+  #memory,
+  #disk,
+  #temperature,
+  #backlight,
+  #network,
+  #pulseaudio,
+  #tray,
+  #workspaces,
+  #idle_inhibitor,
+  #bluetooth {
+    padding: 1px 10px;
+    color: #cdd6f4;
+    background-color: #000000
+  }
+  
+  #idle_inhibitor {
+    color: #7287fd;
+    border-radius: 10px 0px 0px 10px;
+  }
+
+  #cpu {
+    color: #f38ba8;
+  }
+  
+  #memory {
+    color: #ebcb8b;
+    border-radius: 0px 10px 10px 0px;
+  }
+ 
+  #custom-playerctl {
+    color: #cad3f5;
+    border-radius: 10px;
+    margin-left: 8px;
+    margin-right: 40px;
+  }
+
+  #clock {
+    color: #cdd6f4;
+    padding: 0 5px;
+    border-radius: 10px;
+    margin-right: 5px;
+    background-color: #000000;
+    border: 1px solid #5394c4;
+  }
+
+  #workspaces{
+    border-radius: 10px ;
+  }
+  
+  #tray {
+    border-radius: 10px;
+    margin-right: 8px
+  }  
+
+  #tray > .passive {
+    -gtk-icon-effect: dim;
+  }
+  
+  #tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+    background-color: #eb4d4b;
+  }
+    
+  #network {
+    color: #cba6f7;
+    border-radius: 10px;
+    margin-right: 8px
+  }
+
+  #temperature {
+    color: #d5c0bc;
+    margin-right: 8px;
+    border-radius: 0px 10px 10px 0px;
+  }
+
+  #battery {
+    color: #c0caf5;
+    border-radius: 10px;
+    border-radius: 10px 0px 0px 10px;
+  }
+  
+  #battery.charging,
+  #battery.full,
+  #battery.plugged {
+    color: #46a65b;
+  }
+  
+  @keyframes blink {
+    to {
+      background-color: rgba(24, 24, 32, 0.8);
+      color: #abb2bf;
+    }
+  }
+  
+  #battery.critical:not(.charging) {
+    color: #f53c3c;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+  }
+
+  #backlight {
+    border-radius: 10px 0px 0px 10px;
+    color: 	#a6da95;
+  }
+
+  #pulseaudio {
+    color: #b4befe;
+    border-left: 0px;
+    border-right: 0px;
+  }
+
+  #pulseaudio.microphone {
+    color: #cba6f7;
+    border-left: 0px;
+    border-right: 0px;
+    border-radius: 0px 10px 10px 0px;
+  }
