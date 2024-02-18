@@ -32,11 +32,34 @@ fi
 
 yes | sudo pacman -S --noconfirm yazi ffmpegthumbnailer unarchiver jq poppler fd ripgrep fzf tree bash zoxide neovim nwg-look pipewire pipewire-alsa pipewire-audio pipewire-jack pipewire-media-session ttf-jetbrains-mono-nerd noto-fonts-emoji noto-fonts-cjk polkit-gnome mpv imv ffmpeg hyprland  dunst wofi swaybg grim slurp kitty imagemagick pamixer brightnessctl waybar xdg-desktop-portal-hyprland cliphist bluez bluez-utils pulseaudio-bluetooth gvfs-mtp btop noto-fonts libsixel wlsunset cowsay 
 
-sudo cp -R .files/.themes/* /usr/share/themes/
+dirtheme="/usr/share/themes/"
+if [ ! -d "$dirtheme" ]; then
+    sudo mkdir -p "$dirtheme"
+fi
+sudo cp -r .files/.themes/* $dirtheme
+
 sudo cp .files/.issue/issue /etc/issue
-cp -R .files/.config/* ~/.config/
+
+if [ ! -d "$HOME/.config/" ]; then
+    mkdir -p "$HOME/.config/"
+fi
+cp -R .files/.config/* $HOME/.config/
+
+cp .files/.bash/.bash_profile $HOME/
+cp .files/.bash/.bashrc $HOME/
+
+mkdir -p $HOME/.local/share/vocab/
+cp .files/.bash/vocabulary.txt $HOME/.local/share/vocab/
 
 sudo systemctl enable --now bluetooth
 sudo sed -i 's/^Exec=nvim %F/Exec=kitty nvim %F/; s/Terminal=true/Terminal=false/' /usr/share/applications/nvim.desktop
 
+read -p "Do you want to install additional packages? (Y/N): " choice
+choice=$(echo "$choice" | tr '[:lower:]' '[:upper:]')
+if [[ "$choice" == "Y" ]]; then
+    chmod +x .files/.extras/extra.sh && (cd .files/.extras/ && ./extra.sh)
+else
+    echo "No additional packages will be installed."
+fi
 
+Hyprland

@@ -1,6 +1,12 @@
 # ~/.bashrc
 #set -o vi
-cowsay "$(shuf -n 1 ~/.local/share/vocab/words.txt)"
+
+random_line=$(shuf -n 1 ~/.local/share/vocab/vocabulary.txt)
+word=$(echo "$random_line" | cut -d ':' -f 1)
+meaning=$(echo "$random_line" | cut -d ':' -f 2)
+sentence=$(echo "$random_line" | cut -d ':' -f 3)
+echo -e "$word: $meaning \n $sentence" | cowsay
+
 # Enable bash-completion
 export PS1='\n\[\e[36m\] \D{%Y-%m-%d %H:%M:%S} \[\e[39m\] \h \[\e[36m\]in \[\e[32m\]\w\n\[\e[37m\]\[\e[36m\]○ \[\e[32m\]→\[\033[00m\] '
 export EDITOR="nvim"
@@ -25,10 +31,11 @@ alias ln='ln -i'
 alias ll='ls -lah'
 alias q='exit'
 alias bl='bluetoothctl connect 8C:64:A2:2C:E5:AC'
+alias dbl='bluetoothctl disconnect 8C:64:A2:2C:E5:AC'
 alias hst='history | fzf --border=sharp | cut -c 8- | wl-copy'
 
 alias ..='cd ..'
-alias .2='cd ../..'
+alias ...='cd ../..'
 alias .3='cd ../../..'
 alias .4='cd ../../../..'
 alias .5='cd ../../../../..'
@@ -72,3 +79,11 @@ function ya() {
 	fi
 	rm -f -- "$tmp"
 }
+
+fg(){
+  file=$(grep --line-buffered --color=auto -nrFI "$1" * | fzf -e --multi --border=sharp \
+--preview='grep --color=always -nrF "$1" {} | fzf --ansi --preview "bat --style=numbers --color=always --line-range :500 {}"' \
+--preview-window='40%,border-sharp' | cut -d: -f1 --output-delimiter=' ') && nvim ${file}
+}
+
+
