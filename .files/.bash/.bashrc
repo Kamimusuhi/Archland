@@ -86,4 +86,4 @@ fg(){
 --preview-window='40%,border-sharp' | cut -d: -f1 --output-delimiter=' ') && nvim ${file}
 }
 
-
+eval "$(zoxide init bash)"

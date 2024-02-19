@@ -1,5 +1,10 @@
 #!/bin/bash
 
+if [ ! -d "$HOME/Archland" ]; then
+    echo "Please clone the repository into your home directory."
+    exit 1
+fi
+
 if [ -f /etc/os-release ] && grep -q '^ID=\(arch\|.*arch\)' /etc/os-release; then
   echo " "
 else
@@ -36,20 +41,21 @@ dirtheme="/usr/share/themes/"
 if [ ! -d "$dirtheme" ]; then
     sudo mkdir -p "$dirtheme"
 fi
-sudo cp -r .files/.themes/* $dirtheme
+sudo cp -r $HOME/Archland/.files/.themes/* $dirtheme
 
-sudo cp .files/.issue/issue /etc/issue
+sudo cp $HOME/Archland/.files/.issue/issue /etc/issue
 
 if [ ! -d "$HOME/.config/" ]; then
     mkdir -p "$HOME/.config/"
 fi
-cp -R .files/.config/* $HOME/.config/
+cp -R $HOME/Archland/.files/.config/* $HOME/.config/
 
-cp .files/.bash/.bash_profile $HOME/
-cp .files/.bash/.bashrc $HOME/
+cp $HOME/Archland/.files/.bash/.bash_profile $HOME/
+cp $HOME/Archland/.files/.bash/.bashrc $HOME/
 
+mkdir -p $HOME/Pictures/Screenshots/
 mkdir -p $HOME/.local/share/vocab/
-cp .files/.bash/vocabulary.txt $HOME/.local/share/vocab/
+cp $HOME/Archland/.files/.bash/vocabulary.txt $HOME/.local/share/vocab/
 
 sudo systemctl enable --now bluetooth
 sudo sed -i 's/^Exec=nvim %F/Exec=kitty nvim %F/; s/Terminal=true/Terminal=false/' /usr/share/applications/nvim.desktop

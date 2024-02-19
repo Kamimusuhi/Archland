@@ -43,83 +43,83 @@ download_apps() {
     while IFS= read -r app; do
         case $app in
             "Thunar (GUI File Manager)")
-                echo "Downloading Thunar..."
+                echo "Installing Thunar..."
                 sudo pacman -S --noconfirm thunar gvfs-mtp tumbler unzip file-roller android-tools xdg-user-dirs
                 ;;
             "Swaylock effects")
-                echo "Downloading Swaylock"
+                echo "Installing Swaylock"
                 paru -S --noconfirm swaylock-effects-git
                 ;;
             "Nicotine+ (Music-sharing Client)")
-                echo "Downloading Nicotine+..."
+                echo "Installing Nicotine+..."
                 sudo pacman -S --noconfirm nicotine+
                 ;;
             "Signal Desktop")
-                echo "Downloading Signal Desktop..."
+                echo "Installing Signal Desktop..."
                 sudo pacman -S --noconfirm signal-desktop
                 ;;
             "Secrets (GUI Password Manager)")
-                echo "Downloading Secrets..."
+                echo "Installing Secrets..."
                 sudo pacman -S --noconfirm secrets
                 ;;
             "qbittorrent")
-                echo "Downloading qBittorrent..."
+                echo "Installing qBittorrent..."
                 sudo pacman -S --noconfirm qbittorrent
                 ;;
             "Spotify")
-                echo "Downloading Spotify..."
+                echo "Installing Spotify..."
                 paru -S --noconfirm spotify zenity
                 ;;
             "Rust desk")
-                echo "Downloading Rust desk..."
+                echo "Installing Rust desk..."
                 paru -S --noconfirm rustdesk-bin
                 ;;
             "Chromium")
-                echo "Downloading Chromium..."
+                echo "Installing Chromium..."
                 sudo pacman -S --noconfirm chromium
                 ;;
             "Thromium")
-                echo "Downloading Thromium..."
+                echo "Installing Thromium..."
                 paru -S --noconfirm thorium-browser-bin
                 ;;
             "Floorp (What Firefox should be)")
-                echo "Downloading Floorp..."
+                echo "Installing Floorp..."
                 paru -S --noconfirm floorp-bin
                 ;;
             "Firefox")
-                echo "Downloading Firefox..."
+                echo "Installing Firefox..."
                 sudo pacman -S --noconfirm firefox
                 ;;
             "Librewolf")
-                echo "Downloading Librewolf..."
+                echo "Installing Librewolf..."
                 paru -S --noconfirm librewolf-bin
                 ;;
             "VS-Code (Microsoft)")
-                echo "Downloading VS-Code (Microsoft)..."
+                echo "Installing VS-Code (Microsoft)..."
                 paru -S --noconfirm visual-studio-code
                 ;;
             "VS-Codium")
-                echo "Downloading VS-Codium..."
+                echo "Installing VS-Codium..."
                 paru -S --noconfirm vscodium-bin
                 ;;
             "LibreOffice")
-                echo "Downloading LibreOffice..."
+                echo "Installing LibreOffice..."
                 sudo pacman -S --noconfirm libreoffice-fresh
                 ;;
             "Thunderbird")
-                echo "Downloading Thunderbird..."
+                echo "Installing Thunderbird..."
                 sudo pacman -S --noconfirm thunderbird
                 ;;
             "OBS Studio")
-                echo "Downloading OBS Studio..."
+                echo "Installing OBS Studio..."
                 sudo pacman -S --noconfirm obs-studio
                 ;;
             "Okular (Document Viewer)")
-                echo "Downloading Okular..."
+                echo "Installing Okular..."
                 sudo pacman -S --noconfirm okular
                 ;;
             "Vencord (Discord client)")
-                echo "Downloading Vencord (Discord client)..."
+                echo "Installing Vencord (Discord client)..."
                 paru -S --noconfirm vesktop-bin
                 ;;
             *)
