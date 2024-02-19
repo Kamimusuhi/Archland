@@ -53,6 +53,7 @@ cp .files/.bash/vocabulary.txt $HOME/.local/share/vocab/
 
 sudo systemctl enable --now bluetooth
 sudo sed -i 's/^Exec=nvim %F/Exec=kitty nvim %F/; s/Terminal=true/Terminal=false/' /usr/share/applications/nvim.desktop
+sudo sed -i 's/^Exec=yazi %u/Exec=kitty yazi %u/; s/Terminal=true/Terminal=false/' /usr/share/applications/yazi.desktop
 
 read -p "Do you want to install additional packages? (Y/N): " choice
 choice=$(echo "$choice" | tr '[:lower:]' '[:upper:]')

@@ -18,6 +18,7 @@ button=white,black"
 show_menu() {
     whiptail --title "App Selection" --checklist --separate-output "Select the apps you want to download:" 20 60 14 \
     "Thunar (GUI File Manager)" "" on \
+    "Swaylock effects" "" on \
     "Nicotine+ (Music-sharing Client)" "" off \
     "Signal Desktop" "" on \
     "Secrets (GUI Password Manager)" "" off \
@@ -44,6 +45,10 @@ download_apps() {
             "Thunar (GUI File Manager)")
                 echo "Downloading Thunar..."
                 sudo pacman -S --noconfirm thunar gvfs-mtp tumbler unzip file-roller android-tools xdg-user-dirs
+                ;;
+            "Swaylock effects")
+                echo "Downloading Swaylock"
+                paru -S --noconfirm swaylock-effects-git
                 ;;
             "Nicotine+ (Music-sharing Client)")
                 echo "Downloading Nicotine+..."
