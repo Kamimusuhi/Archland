@@ -3,8 +3,8 @@
   "layer": "top",
   "position": "top",
   "margin-top": 2,
-  "modules-left": ["clock", "mpris"],
-  "modules-center": ["hyprland/workspaces"],
+  "modules-left": ["hyprland/workspaces", "mpris"],
+  "modules-center": ["clock"],
   "modules-right": [
     "tray",
     "group/system",
