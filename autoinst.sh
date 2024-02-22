@@ -6,10 +6,10 @@ if [ ! -d "$HOME/Archland" ]; then
 fi
 
 if [ -f /etc/os-release ] && grep -q '^ID=\(arch\|.*arch\)' /etc/os-release; then
-  echo " "
+    echo " "
 else
-  echo "This script is intended for Arch Linux or Arch-based distributions only."
-  exit 1
+    echo "This script is intended for Arch Linux or Arch-based distributions only."
+    exit 1
 fi
 
 sudo sed -i "s/^#ParallelDownloads = 5$/ParallelDownloads = 15\nILoveCandy/" /etc/pacman.conf
@@ -26,8 +26,8 @@ else
 fi
 
 ISAUR=/sbin/paru
-if [ -f "$ISAUR" ]; then 
-    echo -e "Paru was located, moving on.\n"   
+if [ -f "$ISAUR" ]; then
+    echo -e "Paru was located, moving on.\n"
 else
     echo "Installing Paru for a AUR Helper"
     git clone https://aur.archlinux.org/paru-bin.git
@@ -35,7 +35,7 @@ else
 
 fi
 
-yes | sudo pacman -S --noconfirm yazi ffmpegthumbnailer unarchiver jq poppler fd ripgrep fzf tree bash zoxide neovim nwg-look pipewire pipewire-alsa pipewire-audio pipewire-jack pipewire-media-session ttf-jetbrains-mono-nerd noto-fonts-emoji noto-fonts-cjk polkit-gnome mpv imv ffmpeg hyprland  dunst wofi swaybg grim slurp kitty imagemagick pamixer brightnessctl waybar xdg-desktop-portal-hyprland cliphist bluez bluez-utils pulseaudio-bluetooth gvfs-mtp btop noto-fonts libsixel wlsunset cowsay 
+yes | sudo pacman -S --noconfirm yazi ffmpegthumbnailer unarchiver jq poppler fd ripgrep fzf tree bash zoxide neovim nwg-look pipewire pipewire-alsa pipewire-audio pipewire-jack pipewire-media-session ttf-jetbrains-mono-nerd noto-fonts-emoji noto-fonts-cjk polkit-gnome mpv imv ffmpeg hyprland  dunst wofi swaybg grim slurp kitty imagemagick pavucontrol pamixer brightnessctl waybar xdg-desktop-portal-hyprland cliphist bluez bluez-utils pulseaudio-bluetooth gvfs-mtp btop noto-fonts libsixel wlsunset cowsay
 
 dirtheme="/usr/share/themes/"
 if [ ! -d "$dirtheme" ]; then
