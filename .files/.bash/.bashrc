@@ -1,14 +1,13 @@
 # ~/.bashrc
 #set -o vi
 
-random_line=$(shuf -n 1 ~/.local/share/vocab/vocabulary.txt)
-word=$(echo "$random_line" | cut -d ':' -f 1)
-meaning=$(echo "$random_line" | cut -d ':' -f 2)
-sentence=$(echo "$random_line" | cut -d ':' -f 3)
-echo -e "$word: $meaning \n $sentence" | cowsay
+##random_line=$(shuf -n 1 ~/.local/share/vocab/vocabulary.txt)
+##word=$(echo "$random_line" | cut -d ':' -f 1)
+##meaning=$(echo "$random_line" | cut -d ':' -f 2)
+##sentence=$(echo "$random_line" | cut -d ':' -f 3)
+##echo -e "$word: $meaning \n $sentence" | cowsay
 
 # Enable bash-completion
-export PS1='\n\[\e[36m\] \D{%Y-%m-%d %H:%M:%S} \[\e[39m\] \h \[\e[36m\]in \[\e[32m\]\w\n\[\e[37m\]\[\e[36m\]○ \[\e[32m\]→\[\033[00m\] '
 export EDITOR="nvim"
 export VISUAL="nvim"
 

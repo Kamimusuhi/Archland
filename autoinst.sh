@@ -43,6 +43,9 @@ if [ ! -d "$dirtheme" ]; then
 fi
 sudo cp -r $HOME/Archland/.files/.themes/* $dirtheme
 
+sudo cp -r $HOME/Archland/.files/.fonts/Geist.Mono/* /usr/share/fonts/
+fc-cache -f -v
+
 sudo cp $HOME/Archland/.files/.issue/issue /etc/issue
 
 if [ ! -d "$HOME/.config/" ]; then
@@ -61,12 +64,13 @@ sudo systemctl enable --now bluetooth
 sudo sed -i 's/^Exec=nvim %F/Exec=kitty nvim %F/; s/Terminal=true/Terminal=false/' /usr/share/applications/nvim.desktop
 sudo sed -i 's/^Exec=yazi %u/Exec=kitty yazi %u/; s/Terminal=true/Terminal=false/' /usr/share/applications/yazi.desktop
 
-read -p "Do you want to install additional packages? (Y/N): " choice
-choice=$(echo "$choice" | tr '[:lower:]' '[:upper:]')
+read -p "Do you want to install additional packages? (Y/n): " choice
+choice=$(echo "${choice:-Y}" | tr '[:lower:]' '[:upper:]')  # Default to Y if no input is provided
 if [[ "$choice" == "Y" ]]; then
     chmod +x .files/.extras/extra.sh && (cd .files/.extras/ && ./extra.sh)
 else
     echo "No additional packages will be installed."
 fi
+
 
 Hyprland

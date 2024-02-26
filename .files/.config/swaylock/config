@@ -2,9 +2,9 @@ daemonize
 show-failed-attempts
 clock
 screenshot
-effect-blur=9x5
-effect-vignette=0.5:0.5
-color=1f1d2e80
+effect-blur=8x16
+effect-vignette=0.4:0.4
+color=0f0f12
 indicator
 indicator-radius=200
 indicator-thickness=20
@@ -31,7 +31,7 @@ bs-hl-color=31748f
 grace=2
 grace-no-mouse
 grace-no-touch
-datestr=%a, %B %e
+datestr=%a, %d %m
 timestr=%I:%M %p
 fade-in=0.3
 ignore-empty-password

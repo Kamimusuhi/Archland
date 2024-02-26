@@ -11,11 +11,12 @@
     "group/potency",
     "pulseaudio",
     "pulseaudio#microphone",
-    "group/group-power"
+    "group/group-power",
   ],
 
   "clock": {
-    "format": " {: %H:%M} ",
+    // "format": " {: %H:%M} ",
+    "format": "{:%b %d %H:%M}",
     "format-alt": " {:%a %d %b %H:%M}",
     "tooltip-format": "<tt>{calendar}</tt>",
     "calendar": {
@@ -24,28 +25,29 @@
       "on-scroll": 1,
       "format": {
         "weekdays": "<span color='#a6da95'><b>{}</b></span>",
-        "today": "<span color='#ff6699'><b>{}</b></span>"
-      }
+        "today": "<span color='#ff6699'><b>{}</b></span>",
+      },
     },
     "actions": {
       "on-click-right": "mode",
       "on-scroll-up": "shift_up",
-      "on-scroll-down": "shift_down"
-    }
+      "on-scroll-down": "shift_down",
+    },
   },
 
   "mpris": {
     "interval": 1,
-    "format": "{status_icon} {dynamic}",
-    "format-paused": "{status_icon} <i>{dynamic}</i>",
+  "format": "<span color='#cdd6f4'>{status_icon} {dynamic}</span>",
+  "format-paused": "<span color='#9da6c4'>{status_icon} <i>{dynamic}</i></span>",
     "on-click": "playerctl play-pause",
     "on-scroll-up": "playerctl next",
     "on-scroll-down": "playerctl previous",
     "tooltip": false,
     "status-icons": {
       "playing": "󰎈",
-      "paused": "󰏥"
-    }
+      "paused": "󰏥",
+    },
+    "max-length": 400,
   },
 
   "hyprland/workspaces": {
@@ -60,12 +62,12 @@
       "  urgent": "",
       "  active": "",
       "  default": "",
-      "  sort-by-number": true
-    }
+      "  sort-by-number": true,
+    },
   },
 
   "tray": {
-    "spacing": 8
+    "spacing": 8,
   },
 
   "network": {
@@ -75,28 +77,28 @@
     "format-alt": "  {essid} ({signalStrength}%)",
     "tooltip-format": "Network: <big><b>{essid}</b></big>\nSignal strength: <b>{signaldBm}dBm ({signalStrength}%)</b>\nFrequency: <b>{frequency}MHz</b>\nInterface: <b>{ifname}</b>\nIP: <b>{ipaddr}/{cidr}</b>\nGateway: <b>{gwaddr}</b>\nNetmask: <b>{netmask}</b>",
     "format-disconnected": " ",
-    "tooltip-format-disconnected": "Disconnected"
+    "tooltip-format-disconnected": "Disconnected",
   },
   "cpu": {
     "interval": 10,
     "format": "󰍛 {usage}%",
     "format-alt": "󰍛 {avg_frequency} GHz",
-    "max-length": 10
+    "max-length": 10,
   },
   "memory": {
     "interval": 10,
     "format": "󰾆 {}%",
     "format-alt": "󰾆 {used} GiB",
-    "max-length": 10
+    "max-length": 10,
   },
   "group/system": {
     "orientation": "inherit",
     "transition-duration": 300,
     "drawer": {
       "transition-left-to-right": "true",
-      "transition-duration": 300
+      "transition-duration": 300,
     },
-    "modules": ["network", "cpu", "memory"]
+    "modules": ["network", "cpu", "memory"],
   },
 
   "battery": {
@@ -105,7 +107,7 @@
     "interval": 10,
     "states": {
       "warning": 30,
-      "critical": 20
+      "critical": 20,
     },
     "max-length": 20,
     "format": "{icon} {capacity}%",
@@ -114,11 +116,11 @@
     "format-charging": " {capacity}%",
     "format-plugged": "  {capacity}%",
     "format-full": "  {capacity}%",
-    "format-icons": [" ", " ", " ", " ", " "]
+    "format-icons": [" ", " ", " ", " ", " "],
   },
   "temperature": {
     "format": " {temperatureC}°C",
-    "tooltip-format": " {temperatureF}°F"
+    "tooltip-format": " {temperatureF}°F",
   },
   "backlight": {
     "device": "intel_backlight",
@@ -126,15 +128,15 @@
     "format-icons": ["", "", "", "", "", "", "", "", ""],
     "on-scroll-up": "brightnessctl set 1%+",
     "on-scroll-down": "brightnessctl set 1%-",
-    "tooltip": false
+    "tooltip": false,
   },
   "group/potency": {
     "orientation": "inherit",
     "drawer": {
       "transition-left-to-right": false,
-      "transition-duration": 300
+      "transition-duration": 300,
     },
-    "modules": ["battery", "backlight", "temperature"]
+    "modules": ["battery", "backlight", "temperature"],
   },
 
   "pulseaudio": {
@@ -151,8 +153,8 @@
       "phone": "",
       "portable": "",
       "car": "",
-      "default": ["", "", ""]
-    }
+      "default": ["", "", ""],
+    },
   },
 
   "pulseaudio#microphone": {
@@ -162,35 +164,35 @@
     "on-click": "pamixer --default-source -t",
     "on-scroll-up": "pamixer --default-source -i 5",
     "on-scroll-down": "pamixer --default-source -d 5",
-    "tooltip": false
+    "tooltip": false,
   },
 
   "custom/power": {
     "format": "",
     "tooltip": false,
-    "on-click": "shutdown now"
+    "on-click": "shutdown now",
   },
   "custom/quit": {
     "format": "󰗼",
     "tooltip": false,
-    "on-click": "hyprctl dispatch exit"
+    "on-click": "hyprctl dispatch exit",
   },
   "custom/lock": {
     "format": "󰍁",
     "tooltip": false,
-    "on-click": "swaylock"
+    "on-click": "swaylock",
   },
   "custom/reboot": {
     "format": "󰜉",
     "tooltip": false,
-    "on-click": "reboot"
+    "on-click": "reboot",
   },
   "group/group-power": {
     "orientation": "inherit",
     "drawer": {
       "transition-duration": 300,
-      "transition-left-to-right": false
+      "transition-left-to-right": false,
     },
-    "modules": ["custom/power", "custom/quit", "custom/lock", "custom/reboot"]
-  }
+    "modules": ["custom/power", "custom/quit", "custom/lock", "custom/reboot"],
+  },
 }
