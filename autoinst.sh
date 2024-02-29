@@ -35,7 +35,7 @@ else
 
 fi
 
-yes | sudo pacman -S --noconfirm yazi ffmpegthumbnailer unarchiver jq poppler fd ripgrep fzf tree bash zoxide neovim nwg-look pipewire pipewire-alsa pipewire-audio pipewire-jack pipewire-media-session ttf-jetbrains-mono-nerd noto-fonts-emoji noto-fonts-cjk polkit-gnome mpv imv ffmpeg hyprland  dunst wofi swaybg grim slurp kitty imagemagick pavucontrol pamixer brightnessctl waybar xdg-desktop-portal-hyprland cliphist bluez bluez-utils pulseaudio-bluetooth gvfs-mtp btop noto-fonts libsixel wlsunset cowsay
+yes | sudo pacman -S --noconfirm atuin bat dust yazi swaybg ffmpegthumbnailer unarchiver jq poppler fd ripgrep fzf tree bash zoxide neovim nwg-look pipewire pipewire-alsa pipewire-audio pipewire-jack pipewire-media-session ttf-jetbrains-mono-nerd noto-fonts-emoji noto-fonts-cjk polkit-gnome mpv imv ffmpeg hyprland  dunst wofi grim slurp kitty imagemagick pavucontrol pamixer brightnessctl waybar xdg-desktop-portal-hyprland cliphist bluez bluez-utils pulseaudio-bluetooth gvfs-mtp btop noto-fonts libsixel wlsunset cowsay
 
 dirtheme="/usr/share/themes/"
 if [ ! -d "$dirtheme" ]; then

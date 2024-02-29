@@ -1,6 +1,6 @@
 window {
   margin: 0;
-  background-color: rgba(11, 10, 16, 0.9);
+  background-color: rgba(11, 10, 16, 0.8);
   border-radius: 15px;
 }
 
@@ -11,7 +11,7 @@ window {
   border: none;
   color: #e2e0ec;
   font-weight: bold;
-  background-color: #161420;
+  background-color: rgba(11, 10, 16, 0.8);
   outline: none;
   border-radius: 15px;
 }

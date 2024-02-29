@@ -47,7 +47,7 @@
       "playing": "󰎈",
       "paused": "󰏥",
     },
-    "max-length": 400,
+    "max-length": 56,
   },
 
   "hyprland/workspaces": {

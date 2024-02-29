@@ -17,35 +17,45 @@ button=white,black"
 # Function to display menu and get user selection
 show_menu() {
     whiptail --title "Additional Configuration" --checklist --separate-output "Select the apps you want to download:" 20 60 14 \
-    "Thunar (GUI File Manager)" "" on \
-    "Swaylock effects" "" on \
-    "Nicotine+ (Music-sharing Client)" "" off \
-    "Signal Desktop" "" on \
-    "Secrets (GUI Password Manager)" "" off \
-    "Neovim Config" "" on \
-    "qbittorrent" "" off \
-    "Spotify" "" off \
-    "Rust desk" "" off \
-    "Chromium" "" off \
-    "Thromium" "" off \
-    "Floorp (What Firefox should be)" "" off \
-    "Firefox" "" off \
-    "Librewolf" "" on \
-    "VS-Code (Microsoft)" "" off \
-    "VS-Codium" "" off \
-    "LibreOffice" "" off \
-    "Thunderbird" "" off \
-    "OBS Studio" "" off \
-    "Okular (Document Viewer)" "" off \
-    "Vencord (Discord client)" "" off 2>selected.txt
+        "Thunar (GUI File Manager)" "" on \
+        "Hyprlock" "" on \
+        "Z Shell" "" on\
+        "Nicotine+ (Music-sharing Client)" "" off \
+        "Signal Desktop" "" on \
+        "Secrets (GUI Password Manager)" "" off \
+        "Neovim Config" "" on \
+        "qbittorrent" "" off \
+        "Spotify" "" off \
+        "Rust desk" "" off \
+        "Chromium" "" off \
+        "Thromium" "" off \
+        "Floorp (What Firefox should be)" "" off \
+        "Firefox" "" off \
+        "Librewolf" "" on \
+        "VS-Code (Microsoft)" "" off \
+        "VS-Codium" "" off \
+        "LibreOffice" "" off \
+        "Thunderbird" "" off \
+        "OBS Studio" "" off \
+        "Okular (Document Viewer)" "" off \
+        "Vencord (Discord client)" "" off 2>selected.txt
 }
 
 download_apps() {
     while IFS= read -r app; do
         case $app in
+
+            "Z Shell")
+                echo "Installing zsh..."
+                sudo pacman -S --noconfirm zsh zsh-autosuggestions
+                cp $HOME/Archland/.files/.zsh/.zsh_profile $HOME/
+                cp $HOME/Archland/.files/.zsh/.zshrc $HOME/
+                chsh -s $(which zsh)
+                ;;
+
             "Neovim Config")
                 echo "Ricing Neovim..."
-                sudo pacman -S --noconfirm neovim libmagick npm lua51
+                sudo pacman -S --noconfirm luarocks neovim libmagick npm lua51
                 sudo luarocks --lua-version=5.1 install magick
                 sudo npm install -g live-server
                 ;;
@@ -55,7 +65,7 @@ download_apps() {
                 ;;
             "Swaylock effects")
                 echo "Installing Swaylock"
-                paru -S --noconfirm swaylock-effects-git
+                paru -S --noconfirm hyprlock
                 ;;
             "Nicotine+ (Music-sharing Client)")
                 echo "Installing Nicotine+..."
@@ -145,4 +155,3 @@ main() {
 }
 
 main
-

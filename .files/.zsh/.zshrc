@@ -1,12 +1,28 @@
-# ~/.bashrc
-#set -o vi
+# Created by newuser for 5.9
 
-# Enable bash-completion
+eval "$(zoxide init zsh)"
+eval "$(atuin init zsh)"
+atuin import auto
 export EDITOR="nvim"
 export VISUAL="nvim"
+autoload -U colors && colors
+PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b "
+
+# History in cache directory:
+HISTSIZE=10000000
+SAVEHIST=10000000
+HISTFILE="${XDG_CACHE_HOME:-$HOME/.cache}/zsh/history"
+
+# Basic auto/tab complete:
+autoload -U compinit
+zstyle ':completion:*' menu select
+zmodload zsh/complist
+compinit
+
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # Aliases
-alias in='sudo pacman -S'
+alias in='paru -S'
 alias un='sudo pacman -Rns'
 alias uinst='sudo pacman -Rns $(pacman -Qq | fzf)'
 alias prun='sudo pacman -Rns $(pacman -Qtdq)'
@@ -14,19 +30,20 @@ alias up='paru -Syu --noconfirm --quiet'
 alias pmq='pacman -Q | fzf --border=sharp | wl-copy'
 
 alias convert='ffmpeg -i $1 $2 > /dev/null 2>&1'
-alias setwal='swaybg -m fill -i'
+alias wal='swaybg -m fill -i'
 # alias kys='sudo rm -rf --no-preserve-root /'
 
 alias v='nvim'
 alias mv='mv -i'
 alias cp='cp -i'
 alias ln='ln -i'
+alias ls='ls --color=auto'
+alias l.='ls -d .* --color=auto'
 alias ll='ls -lah'
 alias q='exit'
 alias cat='bat'
 alias bl='bluetoothctl connect 8C:64:A2:2C:E5:AC'
 alias dbl='bluetoothctl disconnect 8C:64:A2:2C:E5:AC'
-alias hst='history | fzf --border=sharp | cut -c 8- | wl-copy'
 
 alias ..='cd ..'
 alias ...='cd ../..'
@@ -86,8 +103,4 @@ fg(){
 ##sentence=$(echo "$random_line" | cut -d ':' -f 3)
 ##echo -e "$word: $meaning \n $sentence" | cowsay
 
-eval "$(zoxide init bash)"
-eval "$(atuin init bash)"
-
-atuin import auto
 clear
