@@ -104,3 +104,6 @@ fg(){
 ##echo -e "$word: $meaning \n $sentence" | cowsay
 
 clear
+if [ "$(tty)" = "/dev/tty1" ];then
+  exec Hyprland
+fi
