@@ -1,70 +1,86 @@
 return {
-  {
-    "catppuccin/nvim",
-    name = "catppuccin",
-    priority = 1000,
-    config = function()
-      vim.cmd.colorscheme("catppuccin")
-    end,
-  },
-  {
-    "nvim-lualine/lualine.nvim",
-    config = function()
-      require("lualine").setup({
-        options = {
-          component_separators = "|",
-          section_separators = { left = "", right = "" },
-        },
-        sections = {
-          lualine_a = {
-            { "mode", separator = { left = "" }, right_padding = 2 },
-          },
-          lualine_b = { "filename", "branch" },
-          lualine_c = { "fileformat" },
-          lualine_x = {},
-          lualine_y = { "filetype", "progress" },
-          lualine_z = {
-            { "location", separator = { right = "" }, left_padding = 2 },
-          },
-        },
-        inactive_sections = {
-          lualine_a = { "filename" },
-          lualine_b = {},
-          lualine_c = {},
-          lualine_x = {},
-          lualine_y = {},
-          lualine_z = { "location" },
-        },
-        tabline = {},
-        extensions = {},
-      })
-    end,
-  },
-  {
-    "akinsho/bufferline.nvim",
-    config = function()
-      vim.opt.termguicolors = true
-      require("bufferline").setup({
-        options = {
-          always_show_bufferline = false,
-          show_buffer_close_icons = false,
-          show_tab_indicators = true,
-        },
-      })
-    end,
-  },
-  {
-    "folke/noice.nvim",
-    event = "VeryLazy",
-    opts = {},
-    dependencies = {
-      "MunifTanjim/nui.nvim",
-      "rcarriga/nvim-notify",
-    },
-    vim.keymap.set("n", "<leader>nd", "<cmd>NoiceDismiss<CR>", { desc = "Dismiss Noice Message" }),
-  },
-
-  --[[
+	{
+		"catppuccin/nvim",
+		name = "catppuccin",
+		priority = 1000,
+		config = function()
+			vim.cmd.colorscheme("catppuccin")
+		end,
+	},
+	{
+		"nvim-lualine/lualine.nvim",
+		config = function()
+			require("lualine").setup({
+				options = {
+					component_separators = "|",
+					section_separators = { left = "", right = "" },
+				},
+				sections = {
+					lualine_a = {
+						{ "mode", separator = { left = "" }, right_padding = 2 },
+					},
+					lualine_b = { "filename", "branch" },
+					lualine_c = { "fileformat" },
+					lualine_x = {},
+					lualine_y = { "filetype", "progress" },
+					lualine_z = {
+						{ "location", separator = { right = "" }, left_padding = 2 },
+					},
+				},
+				inactive_sections = {
+					lualine_a = { "filename" },
+					lualine_b = {},
+					lualine_c = {},
+					lualine_x = {},
+					lualine_y = {},
+					lualine_z = { "location" },
+				},
+				tabline = {},
+				extensions = {},
+			})
+		end,
+	},
+	{
+		"akinsho/bufferline.nvim",
+    vim.api.nvim_set_keymap('n', '<C-w>', ':bd<CR>', { noremap = true, silent = true }),
+    vim.api.nvim_set_keymap('n', '<Tab>', ':BufferLineCycleNext<CR>', { noremap = true, silent = true }),
+		config = function()
+			vim.opt.termguicolors = true
+			require("bufferline").setup({
+				options = {
+					always_show_bufferline = false,
+					show_buffer_close_icons = false,
+					show_tab_indicators = true,
+				},
+			})
+		end,
+	},
+	{
+		"folke/noice.nvim",
+		event = "VeryLazy",
+		opts = {
+			routes = {
+				{
+					filter = { event = "notify", find = "No information available" },
+					opts = { skip = true },
+				},
+			},
+			presets = {
+				lsp_doc_border = true,
+			},
+		},
+		dependencies = {
+			"MunifTanjim/nui.nvim",
+			"rcarriga/nvim-notify",
+		},
+		vim.keymap.set("n", "<leader>nd", "<cmd>NoiceDismiss<CR>", { desc = "Dismiss Noice Message" }),
+	},
+	{
+		"NvChad/nvim-colorizer.lua",
+		event = { "BufReadPre", "BufNewFile" },
+		config = true,
+	},
+	--[[
   {
     "j-hui/fidget.nvim",
     event = "LspAttach",
@@ -217,7 +233,7 @@ return {
   },
   ]]
 
-  --[[
+	--[[
   {
     "VonHeikemen/fine-cmdline.nvim",
     requires = {
@@ -261,7 +277,7 @@ return {
     end,
   },
   ]]
-  --[[
+	--[[
   {
     "stevearc/dressing.nvim",
     event = "VeryLazy",

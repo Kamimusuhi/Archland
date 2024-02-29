@@ -24,6 +24,7 @@ return {
 			require("mason-lspconfig").setup({
 				ensure_installed = {
 					"lua_ls",
+					"emmet_ls",
 					"cssls",
 					"clangd",
 					"html",
@@ -53,6 +54,9 @@ return {
 			lspconfig.lua_ls.setup({
 				capabilities = capabilities,
 			})
+			lspconfig.emmet_ls.setup({
+				capabilities = capabilities,
+			})
 
 			vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
 			vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, {})
@@ -67,7 +71,7 @@ return {
 				ensure_installed = {
 					"stylua",
 					"prettier",
-          "beautysh",
+					"shfmt",
 				},
 
 				auto_update = false,
