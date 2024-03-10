@@ -1,11 +1,36 @@
 return {
 	{
+		"rmagatti/auto-session",
+		config = function()
+			require("auto-session").setup({
+				session_lens = {
+					buftypes_to_ignore = {},
+					load_on_setup = true,
+					theme_conf = { border = true },
+					previewer = false,
+				},
+				vim.keymap.set("n", "<leader>ls", require("auto-session.session-lens").search_session, {
+					noremap = true,
+				}),
+			})
+		end,
+	},
+	{
 		"barrett-ruth/live-server.nvim",
 		config = function()
 			vim.keymap.set("n", "<C-A-l>", ":LiveServerStart<CR>", {})
 			vim.keymap.set("n", "<C-A-c>", ":LiveServerStop<CR>", {})
 			require("live-server").setup()
 		end,
+	},
+	{
+		"folke/which-key.nvim",
+		event = "VeryLazy",
+		init = function()
+			vim.o.timeout = true
+			vim.o.timeoutlen = 300
+		end,
+		opts = {},
 	},
 	{
 		"NStefan002/speedtyper.nvim",

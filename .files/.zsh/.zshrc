@@ -5,8 +5,55 @@ eval "$(atuin init zsh)"
 atuin import auto
 export EDITOR="nvim"
 export VISUAL="nvim"
+
+setopt autocd
+
+# Prompt
 autoload -U colors && colors
-PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b "
+function precmd() {
+  print -Pn "\e]0;zsh %(1j,%j job%(2j|s|); ,)%2~\a"
+}
+
+function preexec {
+  printf "\033]0;%s\a" "$1"
+}
+
+autoload -Uz vcs_info
+precmd_vcs_info() { vcs_info }
+precmd_functions+=( precmd_vcs_info )
+setopt prompt_subst
+zstyle ':vcs_info:git:*' formats '%b'
+zstyle ':vcs_info:*' enable git
+
+function () {
+  if [[ $EUID == 0 ]]; then
+    local SUFFIX='%(?,%F{yellow},%F{red})%n%f:'
+  else
+    local SUFFIX='%(?,%F{yellow},%F{#c8c8f0}) ❯%f'
+  fi
+
+  PS1="%B${SUFFIX}%b "
+  if [[ -n $TMUX ]]; then
+    export RPS1="%F{green}\$vcs_info_msg_0_%f %B%(?..%{%F{red}%}(%?%)%{%f%})"
+  else
+    export RPS1="%F{green}\$vcs_info_msg_0_%f %B%(?..%{%F{red}%}(%?%)%{%f%}) %b%F{12}%2~%f"
+  fi
+}
+export SPROMPT="zsh: correct %F{red}'%R'%f to %F{green}'%r'%f [%B%Uy%u%bes, %B%Un%u%bo, %B%Ue%u%bdit, %B%Ua%u%bbort]? "
+
+function zle-keymap-select {
+  case $KEYMAP in
+    vicmd) echo -ne '\e[2 q';;
+    viins|main) echo -ne '\e[6 q';;
+  esac
+}
+zle -N zle-keymap-select
+
+_fix_cursor() {
+   echo -ne '\e[6 q'
+}
+
+precmd_functions+=(_fix_cursor)
 
 # History in cache directory:
 HISTSIZE=10000000

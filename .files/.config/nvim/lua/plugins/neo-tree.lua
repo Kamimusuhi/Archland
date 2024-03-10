@@ -10,7 +10,7 @@ return {
 		},
 		config = function()
 			vim.g.neotree_quit_on_open = 1 -- Close NeoTree after opening a file
-			vim.keymap.set("n", "<C-n>", ":Neotree filesystem toggle right<CR>", {})
+			vim.keymap.set("n", "<leader>e", ":Neotree filesystem toggle right<CR>", {})
 
 			require("neo-tree").setup({
 				window = {

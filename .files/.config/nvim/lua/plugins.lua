@@ -1,3 +1,1 @@
-return {
-  "Kamimusuhi/CodeBlitz.nvim"
-}
+return {}

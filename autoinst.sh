@@ -19,7 +19,7 @@ sudo pacman -Sy --noconfirm libnewt
 # Check if NVIDIA GPU is present
 if lspci | grep -i nvidia > /dev/null; then
     echo "NVIDIA GPU detected. Installing nvidia-dkms and nvidia-utils..."
-    sudo pacman -S --noconfirm nvidia-dkms nvidia-utils
+    sudo pacman -S --noconfirm linux-headers nvidia-dkms nvidia-utils nvidia-settings 
     echo "nvidia-dkms and nvidia-utils installed successfully."
 else
     echo "No NVIDIA GPU detected."

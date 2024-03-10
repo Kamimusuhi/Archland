@@ -2,7 +2,6 @@
   "height": 28,
   "layer": "top",
   "position": "top",
-  "margin-top": 2,
   "modules-left": ["hyprland/workspaces", "mpris"],
   "modules-center": ["clock"],
   "modules-right": [
@@ -37,8 +36,8 @@
 
   "mpris": {
     "interval": 1,
-  "format": "<span color='#cdd6f4'>{status_icon} {dynamic}</span>",
-  "format-paused": "<span color='#9da6c4'>{status_icon} <i>{dynamic}</i></span>",
+    "format": "<span color='#cdd6f4'>{status_icon} {dynamic}</span>",
+    "format-paused": "<span color='#9da6c4'>{status_icon} <i>{dynamic}</i></span>",
     "on-click": "playerctl play-pause",
     "on-scroll-up": "playerctl next",
     "on-scroll-down": "playerctl previous",
@@ -144,7 +143,8 @@
     "format-bluetooth": " {volume}%",
     "format-bluetooth-muted": " ",
     "format-muted": "",
-    "on-click": "exec pavucontrol",
+    "on-click": "pamixer -t",
+    "on-click-right": "exec pavucontrol",
     "tooltip": false,
     "format-icons": {
       "headphone": "",
@@ -180,7 +180,7 @@
   "custom/lock": {
     "format": "󰍁",
     "tooltip": false,
-    "on-click": "swaylock",
+    "on-click": "hyprlock",
   },
   "custom/reboot": {
     "format": "󰜉",

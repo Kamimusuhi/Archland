@@ -1,0 +1,19 @@
+// Place your key bindings in this file to override the defaults
+[
+  {
+    "key": "shift+alt+h",
+    "command": "workbench.action.hideEditorTabs"
+  },
+  {
+    "key": "shift+alt+b",
+    "command": "workbench.action.showMultipleEditorTabs"
+  },
+  {
+    "key": "shift+alt+a",
+    "command": "workbench.action.toggleActivityBarVisibility"
+  },
+  {
+    "key": "shift+alt+l",
+    "command": "workbench.action.toggleStatusbarVisibility"
+  }
+]
